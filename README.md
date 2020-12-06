@@ -15,4 +15,4 @@ The run_pheniqs.sh script was used to de-multiplex the fastq files according the
 
 **c) Running zUMIs to produce count matrices**
 
-The [zUMIs pipeline](https://github.com/sdparekh/zUMIs) was ran using the script run_zumis.sh for each of the samples. To convert the resulting produced dgecounts.rds files to txt matrices counting both intronic and exonic UMI counts using the extract_inex_matrix.R file
+The [zUMIs pipeline](https://github.com/sdparekh/zUMIs) was ran using the script run_zumis.sh for each of the samples. To convert the resulting produced dgecounts.rds files to txt matrices counting both intronic and exonic UMI counts using the extract_inex_matrix.R file. The Ensembl names were then converted to gene names using the 
