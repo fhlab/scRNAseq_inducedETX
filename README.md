@@ -1,7 +1,7 @@
 # scRNAseq inducedETX (iETX) data processing
 This is the GitHub repository describing the scRNA-seq analysis carried out for the publication: "Inducible stem cell-derived embryos capture mouse morphogenetic events *in vitro*", Amadei et al. Developmental Cell 2020 (Figure 7 and Supplementary Figure 7). Please visit the Gene Expression Omnibus [GSE161947](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE161947) entry to find raw and processed datasets. The Natural embryo at E4.5 dataset can be found at the Gene Expression Omnibus [GSE134240](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE134240) from a previous submission.
 
-![alt text](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/UMAP_final.png)
+![alt text](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/UMAP_iETX.png)
 
 **1. Pre-processing the data**
 
