@@ -5,16 +5,24 @@ This is the GitHub repository describing the scRNA-seq analysis carried out for 
 
 **1. Pre-processing the data**
 
-Note: the steps can be concatenated in master scripts if automation is needed, the files presented here are intended to be showcased for each step separately.
+Note: All the steps can be concatenated in master scripts if automation is needed, the files presented here are intended to be showcased for each step independently.
 
-**a) bcl2fastq conversion**
+**a) Generating the STAR index
 
-The BCL files were converted fastq files using the bcl2fastq.sh script.
+The *Mus musculus* STAR index was ran using the [run_STAR_indexer.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_STAR_indexing.sh) script. 
 
-**b) De-multiplexing using the Pheniqs tool from [biosails/pheniqs](https://github.com/biosails/pheniqs)**
+**b) bcl2fastq conversion**
 
-The run_pheniqs.sh script was used to de-multiplex the fastq files according the run_pheniqs.json json file. The data posted on GSE161947 is already de-multiplexed and corresponds to the data obtained after this step.
+The BCL files were converted fastq files using the [bcl2fastq.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/bcl2fastq.sh) script.
 
-**c) Running zUMIs to produce count matrices**
+**c) De-multiplexing using the Pheniqs tool from [biosails/pheniqs](https://github.com/biosails/pheniqs)**
 
-The [zUMIs pipeline](https://github.com/sdparekh/zUMIs) was ran using the script run_zumis.sh for each of the samples. To convert the resulting produced dgecounts.rds files to txt matrices counting both intronic and exonic UMI counts using the extract_inex_matrix.R file. The Ensembl names were then converted to gene names using the 
+The [run_pheniqs.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_pheniqs.sh) script was used to de-multiplex the fastq files according the [run_pheniqs.json] (https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_pheniqs.json) json file. The data posted on GSE161947 is already de-multiplexed and corresponds to the data obtained after this step.
+
+**d) Running zUMIs to produce count matrices**
+
+The [zUMIs pipeline](https://github.com/sdparekh/zUMIs) was ran using the script [run_zumis.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_zumis.sh) for each of the samples. To convert the resulting produced dgecounts.rds files to txt matrices counting both intronic and exonic UMI counts using the [extract_inex_matrix.R](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/extract_inex_matrix.R) file. The Ensembl names were then converted to gene names using the [convert_names.ipynb](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/convert_names.ipynb) script.
+
+**2. Data analysis
+**a) Filtering the data in [scanpy](https://github.com/theislab/scanpy)**
+Scanpy was used to preprocess the data, along with the [Scrublet](https://github.com/AllonKleinLab/scrublet) package for doublet removal. This step eliminates the noise indtroduced by empty droplets, dead cells and cell doublets mainly.
