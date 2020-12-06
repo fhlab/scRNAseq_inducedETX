@@ -9,7 +9,7 @@ Note: the steps can be concatenated in master scripts if automation is needed, t
 
 The BCL files were converted fastq files using the bcl2fastq.sh script.
 
-**b) De-multiplexing using the Pheniqs tool from biosails [biosails/pheniqs](https://github.com/biosails/pheniqs)**
+**b) De-multiplexing using the Pheniqs tool from [biosails/pheniqs](https://github.com/biosails/pheniqs)**
 
 The run_pheniqs.sh script was used to de-multiplex the fastq files according the run_pheniqs.json json file. The data posted on GSE161947 is already de-multiplexed and corresponds to the data obtained after this step.
 
