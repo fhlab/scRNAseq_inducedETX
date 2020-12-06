@@ -31,8 +31,8 @@ Scanpy was used to preprocess the data, along with the [Scrublet](https://github
 
 **b) Plotting the data**
 
-The scripts for plotting from the h5ad object is the [iETX_plotting.ipynb](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_plotting.ipynb) jupyter notebook
+The scripts for plotting from the h5ad object is the [iETX_plotting.ipynb](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_plotting.ipynb) jupyter notebook.
 
 **c) Perform differential gene expression (DGE) analysis with [Seurat](https://github.com/satijalab/seurat)**
 
-The script for performing pairwise DGE analysis can be found in the [iETX_DGE_Seurat.R](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_DGE_Seurat.R) file. It requires a conversion of the scanpy adata to a Seurat compatible matrix with the following command: pd.DataFrame(data=adata.raw.X.A, index=adata.obs_names, columns=adata.var_names).T.to_csv("iETX_cat_R.csv") 
+The script for performing pairwise DGE analysis can be found in the [iETX_DGE_Seurat.R](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_DGE_Seurat.R) file. It requires a conversion of the scanpy adata to a Seurat compatible matrix with the following command: pd.DataFrame(data=adata.raw.X.A, index=adata.obs_names, columns=adata.var_names).T.to_csv("iETX_cat_R.csv").
