@@ -23,12 +23,16 @@ The [run_pheniqs.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_
 
 The [zUMIs pipeline](https://github.com/sdparekh/zUMIs) was ran using the script [run_zumis.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_zumis.sh) for each of the samples. To convert the resulting produced dgecounts.rds files to txt matrices counting both intronic and exonic UMI counts using the [extract_inex_matrix.R](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/extract_inex_matrix.R) file. The Ensembl names were then converted to gene names using the [convert_names.ipynb](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/convert_names.ipynb) script.
 
-**2. Data analysis
+**2. Data analysis**
+
 **a) Filtering the data in [scanpy](https://github.com/theislab/scanpy)**
+
 Scanpy was used to preprocess the data, along with the [Scrublet](https://github.com/AllonKleinLab/scrublet) package for doublet removal. This step eliminates the noise indtroduced by empty droplets, dead cells and cell doublets mainly and can be found in the Jupyter notebook [iETX_filter_the_data.ipynb[(https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_filter_the_data.ipynb).
 
 **b) Plotting the data**
+
 The scripts for plotting from the h5ad object is the [iETX_plotting.ipynb](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_plotting.ipynb) jupyter notebook
 
 **c) Perform differential gene expression (DGE) analysis with Seurat v3**
+
 The script for performing pairwise DGE analysis can be found in the [iETX_DGE_Seurat.R](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_DGE_Seurat.R) file. It requires a conversion of the scanpy adata to a Seurat compatible matrix with the following command: pd.DataFrame(data=adata.raw.X.A, index=adata.obs_names, columns=adata.var_names).T.to_csv("iETX_cat_R.csv") 
