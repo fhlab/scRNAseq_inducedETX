@@ -7,7 +7,7 @@ This is the GitHub repository describing the scRNA-seq analysis carried out for 
 
 Note: All the steps can be concatenated in master scripts if automation is needed, the files presented here are intended to be showcased for each step independently.
 
-**a) Generating the STAR index
+**a) Generating the STAR index**
 
 The *Mus musculus* STAR index was ran using the [run_STAR_indexer.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_STAR_indexing.sh) script. 
 
@@ -25,4 +25,10 @@ The [zUMIs pipeline](https://github.com/sdparekh/zUMIs) was ran using the script
 
 **2. Data analysis
 **a) Filtering the data in [scanpy](https://github.com/theislab/scanpy)**
-Scanpy was used to preprocess the data, along with the [Scrublet](https://github.com/AllonKleinLab/scrublet) package for doublet removal. This step eliminates the noise indtroduced by empty droplets, dead cells and cell doublets mainly.
+Scanpy was used to preprocess the data, along with the [Scrublet](https://github.com/AllonKleinLab/scrublet) package for doublet removal. This step eliminates the noise indtroduced by empty droplets, dead cells and cell doublets mainly and can be found in the Jupyter notebook [iETX_filter_the_data.ipynb[(https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_filter_the_data.ipynb).
+
+**b) Plotting the data**
+The scripts for plotting from the h5ad object is the [iETX_plotting.ipynb](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_plotting.ipynb) jupyter notebook
+
+**c) Perform differential gene expression (DGE) analysis with Seurat v3**
+The script for performing pairwise DGE analysis can be found in the iETX_DGE_Seurat.R file. It requires a conversion of the scanpy adata to a Seurat compatible matrix with the following command: pd.DataFrame(data=adata.raw.X.A, index=adata.obs_names, columns=adata.var_names).T.to_csv("iETX_cat_R.csv") 
