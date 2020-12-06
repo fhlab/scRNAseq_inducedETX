@@ -1,0 +1,53 @@
+project: SAMPLE
+sequence_files:
+  file1:
+    name: /PATH/SAMPLE_R1.fastq.gz
+    base_definition: cDNA(1-61)
+  file2:
+    name: /PATH/SAMPLE_R2.fastq.gz
+    base_definition: BC(1-8)
+  file3:
+    name: /PATH/SAMPLE_R3.fastq.gz
+    base_definition: BC(1-8)
+  file4:
+    name: /PATH/SAMPLE_R4.fastq.gz
+    base_definition:
+    - BC(1-8)
+    - UMI(9-14)
+reference:
+  STAR_index: /PATH/STAR_MM99
+  GTF_file: /PATH/Mus_musculus.GRCm38.99.gtf
+  additional_STAR_params: ''
+  additional_files: ~
+out_dir: /PATH/SAMPLE_Out
+num_threads: 8
+mem_limit: 20
+filter_cutoffs:
+  BC_filter:
+    num_bases: 1
+    phred: 20
+  UMI_filter:
+    num_bases: 1
+    phred: 20
+barcodes:
+  barcode_num: ~
+  barcode_file: ~
+  automatic: yes
+  BarcodeBinning: 0
+  nReadsperCell: 100
+counting_opts:
+  introns: yes
+  downsampling: '0'
+  strand: 1
+  Ham_Dist: 0
+  velocyto: yes
+  primaryHit: no
+  twoPass: yes
+make_stats: yes
+which_Stage: Filtering
+Rscript_exec: Rscript
+STAR_exec: STAR
+pigz_exec: pigz
+samtools_exec: samtools
+zUMIs_directory: /PATH/zUMIs
+read_layout: SE
