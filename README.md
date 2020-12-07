@@ -27,7 +27,7 @@ The [zUMIs pipeline](https://github.com/sdparekh/zUMIs) was ran using the script
 
 **a) Filtering the data in [scanpy](https://github.com/theislab/scanpy)**
 
-Scanpy was used to preprocess the data, along with the [Scrublet](https://github.com/AllonKleinLab/scrublet) package for doublet removal. This step eliminates the noise indtroduced by empty droplets, dead cells and cell doublets mainly and can be found in the Jupyter notebook [iETX_filter_the_data.ipynb[(https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_filter_the_data.ipynb).
+Scanpy was used to preprocess the data, along with the [Scrublet](https://github.com/AllonKleinLab/scrublet) package for doublet removal. This step eliminates the noise indtroduced by empty droplets, dead cells and cell doublets mainly and can be found in the Jupyter notebook [iETX_filter_the_data.ipynb](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/iETX_filter_the_data.ipynb).
 
 **b) Plotting the data**
 
