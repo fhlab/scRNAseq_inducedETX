@@ -17,7 +17,7 @@ The BCL files were converted fastq files using the [bcl2fastq.sh](https://github
 
 **c) De-multiplexing using the Pheniqs tool from [biosails/pheniqs](https://github.com/biosails/pheniqs)**
 
-The [run_pheniqs.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_pheniqs.sh) script was used to de-multiplex the fastq files according the [run_pheniqs.json] (https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_pheniqs.json) json file. The data posted on GSE161947 is already de-multiplexed and corresponds to the data obtained after this step.
+The [run_pheniqs.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_pheniqs.sh) script was used to de-multiplex the fastq files according the [run_pheniqs.json](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_pheniqs.json) json file. The data posted on GSE161947 is already de-multiplexed and corresponds to the data obtained after this step.
 
 **d) Running zUMIs to produce count matrices**
 
