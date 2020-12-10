@@ -9,7 +9,7 @@ Note: All the steps can be concatenated in master scripts if automation is neede
 
 **a) Generating the STAR index**
 
-The *Mus musculus* STAR index was ran using the [run_STAR_indexer.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_STAR_indexing.sh) script. 
+The *Mus musculus* STAR indexing was ran using the [run_STAR_indexer.sh](https://github.com/fhlab/scRNAseq_inducedETX/blob/main/run_STAR_indexing.sh) script. 
 
 **b) bcl2fastq conversion**
 
