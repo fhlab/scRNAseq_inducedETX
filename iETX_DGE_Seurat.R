@@ -17,8 +17,8 @@ obj <- CreateSeuratObject(counts = rm , min.cells = 3, assay = "RNA",names.field
                            
 # Normalize, find the variable features, scale and perform dimensional reduction
 obj[["percent.mt"]] <- PercentageFeatureSet(object = obj, pattern = "^mt-")
-obj  <- NormalizeData(object = gian )
-obj <- FindVariableFeatures(object = gian, selection.method = "vst", nfeatures = 2000)
+obj  <- NormalizeData(object = obj )
+obj <- FindVariableFeatures(object = obj, selection.method = "vst", nfeatures = 2000)
 obj<- ScaleData(object = obj, vars.to.regress = c("percent.mt"))
 obj <- RunPCA(object = obj, features = VariableFeatures(object = obj))
 obj <- RunUMAP(object = obj,reduction = "pca", dims = 1:21, n_neighbors=100, min_dist = 1) %>% FindNeighbors(reduction = "pca", dims = 1:21) %>% FindClusters(resolution = 0.5) %>% identity() 
