@@ -17,7 +17,7 @@ obj <- CreateSeuratObject(counts = rm , min.cells = 3, assay = "RNA",names.field
                            
 # Normalize, find the variable features, scale and perform dimensional reduction
 obj[["percent.mt"]] <- PercentageFeatureSet(object = obj, pattern = "^mt-")
-obj  <- NormalizeData(object = obj )
+obj  <- NormalizeData(object = obj ) #not needed if you load the raw normalized object from scanpy
 obj <- FindVariableFeatures(object = obj, selection.method = "vst", nfeatures = 2000)
 obj<- ScaleData(object = obj, vars.to.regress = c("percent.mt"))
 obj <- RunPCA(object = obj, features = VariableFeatures(object = obj))
